@@ -9,15 +9,116 @@ namespace rpgworld;
 */
 internal class Program
 {
-    static void Main(string[] args)
+static void Main(string[] args)
     {
         bool start5 = false;
         bool engine = true;
         while (engine = true)
-        {
+        { 
+            
+            
+                Console.WriteLine("Type your name here");
+                string name = Console.ReadLine();
+                Console.WriteLine("Your character is going to be named " + name + ". Are you sure? \n Y/N");
+                string answername = Console.ReadLine();
+                if (answername == "N")
+                {
+                    Console.Clear();
+                }
+                if (answername == "Y")
+                {
+                Console.Clear();
+                }
+            /* WEAPONS SWORDS
+             * 
+             * Wooden Sword
+             * Iron Sword
+             * Steel Sword
+             * Fire Sword
+             * FIre Blade
+             * Lava Blade
+             * Volcano
+             * The Destructer
+             * WEAPONS SLINGSHOT
+             * 
+             * Slingshot
+             * Steelshot
+             * Bow
+             * Crossbow
+             * Pickle Launcher
+             * Fat Man
+             * Scar-L
+             * WEAPON SPEAR
+             * 
+             * Wooden Spear
+             * Iron Spear
+             * Steel Spear
+             * Ice Spear
+             * Ice Cube
+             * Galcier
+             * Niflheim
+             * ITEM FRUITS
+             * 
+             * Apple - heals your character by 30%
+             * Pear - Reduce enemy dp by 15% for 8 turns
+             * Durian - Increases your attack by 20%
+             * Dragon Fruit - Every attack for 5 turns does fire damages
+             * Passion Fruit - Increases luck by 30%
+             * Banana - Chance to slip and loose a turn
+             * Strawberry - heals you by 50% but lose 10% attack for 5 turns
+             * Tomato - Heals you by 20% but makes you flee
+             * Raspberry - heals your character by 10%
+             * Rotten Apple - Makes player lose 50 health each turn
+             * Wild Berry - Reduce enemy dp by 40% but for only 3 turns
+             * Blueberry - Heals your character by 5%
+             * ITEM Drinks
+             * 
+             * Chug Jug - Heals you by 75% but enemy gets a free hit
+             * Slurp Juice - Heals you by 10% for 4 turns
+             * Mini Pot - Heals you by 25%
+             * Guzzle Juice - Double Attack for 1 turn
+             * Water - Feels refreshing. Heals you by 10%
+             * Coconut - Somewhat refreshing. Heals you by 5%
+             * Prime - MORE ENERGY MORE POWER Increases your attack by 45% for only 1 attack
+             * Nicholas's Milk - Increases attack for 1 turn by 75%
+             * Monster Energy - Concentration up! Double Damage for 1 turn
+             * Shoma's Milk - Clones you 2 times. TRIPLE DAMAGE
+             * Ice Tea - relax and lose a turn
+             * ITEM GENERAL
+             * 
+             * Xbox Controller - Turn on aim assist and half their health (only works with normal enemies)
+             * Nintendo Switch - Control the enemy and make him suffer. (Chance to insta kill)
+             * Pencil - Stab them to do 15 damage
+             * Tape - Blind their eyes. Get another turn
+             * Hustlers Notebook - Double the exp you earn from this battle (excluding boss fights)
+             * Keagans Laptop - Use his big cursor to enhance your attack by 50%
+             * Quagmires laugh - His laugh will make the enemy stunned. Get another turn.
+             * ARMOR
+             * 
+             * World 1
+             * Leather - 5% more health
+             * Iron 10% more health
+             * Steel 15% more health
+             * World 2
+             * Keagan - 20% more health
+             * Shield of Faith 25% more health
+             * Relentless Vest of the Breaking Storm 30% more health
+             * World 3
+             * Nikocado - no need for armor when you got fat, 75% more health
+             * Boulder - Wear the boulder, become the boulder 80% more health
+             * Eliots ego - 85% more health
+             * World 4
+             * Shepherd of Fury - 140% more health
+             * Adamantite Cuirass of Fleeting Punishment - 145% more health
+             * Spite Titanium Tunic - 150% more health
+             * Plot Armor - hp what for? 500000% more health
+             */
+
+
             bool mainmenu = true;
             bool start = false;
             bool inv = true;
+            bool playerinv = false;
             bool invcheck = true;
             bool start2 = false;
             bool start3 = false;
@@ -71,6 +172,7 @@ internal class Program
             Console.WriteLine("Go to intro to start the game");
             Console.WriteLine("Press enter to Continue");
             Console.ReadLine();
+            Console.WriteLine("ADOAWDIAWDAWDAWDVGFADADYIWDAWDAWDADWDDAWD");
             Console.Clear();
             int tutorial = 0;
             while (mainmenu == true)
@@ -84,7 +186,7 @@ internal class Program
                     Console.WriteLine("4. Change Name");
                     Console.WriteLine("5. Fight");
                     Console.WriteLine("6. Lunch with Sonic");
-                    Console.WriteLine("\n7. Start game");
+                    Console.WriteLine("\n7. Start game\n8. Inventory");
 
                 }
                 string answermenu = Console.ReadLine();
@@ -242,9 +344,9 @@ internal class Program
                                                 {
                                                     break;
                                                 }
-                                                string name = Console.ReadLine();
+                                                name = Console.ReadLine();
                                                 Console.WriteLine("Your character is going to be named " + name + ". Are you sure? \n Y/N");
-                                                string answername = Console.ReadLine();
+                                                answername = Console.ReadLine();
                                                 if (answername == "N")
                                                 {
                                                     Console.Clear();
@@ -288,23 +390,18 @@ internal class Program
                 }
                 if (answermenu == "4")
                 {
-                    start4 = true;
-                    while (start4 == true)
+                    Console.WriteLine("Type your name here");
+                    name = Console.ReadLine();
+                    Console.WriteLine("Your character is going to be named " + name + ". Are you sure? \n Y/N");
+                    answername = Console.ReadLine();
+                    if (answername == "N")
                     {
-                        Console.WriteLine("Type your name here");
-                        string name = Console.ReadLine();
-                        Console.WriteLine("Your character is going to be named " + name + ". Are you sure? \n Y/N");
-                        string answername = Console.ReadLine();
-                        if (answername == "N")
-                        {
-                            Console.Clear();
-                        }
-                        if (answername == "Y")
-                        {
-                            start4 = false;
-                        }
+                        Console.Clear();
                     }
-                    Console.WriteLine("ADOAWDIAWDAWDAWDVGFADADYIWDAWDAWDADWDDAWD");
+                    if (answername == "Y")
+                    {
+                        start4 = false;
+                    }
                 }
                 if (answermenu == "5")
                 {
@@ -506,17 +603,16 @@ internal class Program
                         {
                             draw = 0;
                             losewin += 1;
-                            Console.WriteLine("You ran away! \n 0 EXP EARNED");
+                            Console.WriteLine("You ran away! \n0 EXP EARNED");
                             Console.ReadLine();
                         }
-                        
-                        
+                        Console.Clear();
+                        Console.WriteLine("Welcome back");
+                        Console.ReadLine();
                     }
                     while (losewin == 0);
-                    Console.Clear();
-                    Console.WriteLine("Welcome back");
                     losewin = 0;
-                    Console.ReadLine();
+
 
                 }
                 if (answermenu == "6")
@@ -524,7 +620,7 @@ internal class Program
                     int boss = 0;
                     string enemyboss = "Sonic";
                     enemyhp = 600;
-                    double bossattackincome = enemyattackincome * 0.2;
+                    double bossattackincome = enemyattackincome * 69420;
                     Console.WriteLine(@"       ___------__");
                     Console.WriteLine(@" |\__-- /\       _-");
                     Console.WriteLine(@" |/    __      -");
@@ -546,7 +642,7 @@ internal class Program
                     do
                     {
                         fighting = true;
-                        Console.WriteLine("1. ATTACK       2. DEFEND     3. FLEE       4. ULTIMATE (" + bigattack + "/3)");
+                        Console.WriteLine("1. ATTACK       2. DEFEND     3. FLEE       4. ULTIMATE (" + bigattack + "/5)");
                         string response = Console.ReadLine();
                         if (response == "1")
                         {
@@ -611,7 +707,7 @@ internal class Program
                         }
                         if (response == "4")
                         {
-                            if (bigattack > 2)
+                            if (bigattack > 4)
                             {
                                 double ultimate = Damage * 3.75;
                                 Console.WriteLine("ULTIMATE ATTACK!");
@@ -676,13 +772,15 @@ internal class Program
                             Damage = Damage * 0.05 + Damage;
                             Health = Health * 0.05 + Health;
                         }
+                        Console.WriteLine("Sonic dropped a Legendary ScarL!");
+
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
 
                     }
                     if (lose != 0)
                     {
-                        Console.WriteLine("You lost! \n 0 EXP EARNED");
+                        Console.WriteLine("You lost! \n0 EXP EARNED");
                         Console.ReadLine();
                         losewin += 1;
                         lose = 0;
@@ -707,14 +805,36 @@ internal class Program
                 if (answermenu == "7")
                 {
                     Console.WriteLine("");
+                    Console.WriteLine("Water or Milk?");
+                    string answermilk = Console.ReadLine();
+                    if (answermilk == "Water")
+                    {
+                        Console.WriteLine("valid");
+                    }
+                    if (answermilk == "Milk")
+                    {
+                        Console.WriteLine("valid")
+                    }
                 }
-               
+                if (answermenu == "8")
+                {
+                    playerinv = true;
+                    while (playerinv == true)
+                    {
+                        Console.WriteLine("1. Weapons \n2. Item \n3. Armor");
+                        Console.WriteLine("Hello " + name + );
+                    }
+                    
+                    
+                    
+                }
+
             }
 
 
 
 
-            
+
         }
     }
     static string Attack(int Enemyid, string enemyname)
