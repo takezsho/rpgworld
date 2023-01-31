@@ -4,7 +4,7 @@ namespace rpgworld;
 /* comment
 * my rpg world 
 * Shoma T
-* Period 2
+* Period 5
 * RPG
 */
 internal class Program
