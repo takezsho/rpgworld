@@ -4,7 +4,7 @@ namespace rpgworld;
 /* comment
 * my rpg world 
 * Shoma T
-* Period 5
+* Period 2
 * RPG
 */
 internal class Program
@@ -68,6 +68,7 @@ internal class Program
             Console.WriteLine("Your Hit point is = " + Health);
             Console.WriteLine("Your Damage point is = " + Damage);
             Console.WriteLine("Your Luck point is = " + Luck);
+            Console.WriteLine("Go to intro to start the game");
             Console.WriteLine("Press enter to Continue");
             Console.ReadLine();
             Console.Clear();
@@ -75,7 +76,7 @@ internal class Program
             while (mainmenu == true)
             {
                 Console.Clear();
-                Console.WriteLine("1. Start");
+                Console.WriteLine("1. Intro");
                 Console.WriteLine("2. Stats");
                 Console.WriteLine("3. Credits");
                 if (tutorial == 1)
@@ -83,6 +84,7 @@ internal class Program
                     Console.WriteLine("4. Change Name");
                     Console.WriteLine("5. Fight");
                     Console.WriteLine("6. Lunch with Sonic");
+                    Console.WriteLine("\n7. Start game");
 
                 }
                 string answermenu = Console.ReadLine();
@@ -411,6 +413,7 @@ internal class Program
                                     fighting = false;
                                     combat = false;
                                     lose += 1;
+                                    Health = 5;
                                     break;
                                 }
                                 bigattack += 1;
@@ -520,8 +523,8 @@ internal class Program
                 {
                     int boss = 0;
                     string enemyboss = "Sonic";
-                    enemyhp = 200;
-                    int bossattackincome = enemyattackincome * 69420;
+                    enemyhp = 600;
+                    double bossattackincome = enemyattackincome * 0.2;
                     Console.WriteLine(@"       ___------__");
                     Console.WriteLine(@" |\__-- /\       _-");
                     Console.WriteLine(@" |/    __      -");
@@ -570,6 +573,7 @@ internal class Program
                             }
                             while (fighting == true)
                             {
+                                Console.WriteLine("Sonic used sneeze!");
                                 Console.WriteLine("The " + enemyboss + " did " + bossattackincome + " damage!");
                                 Health -= bossattackincome;
                                 Console.WriteLine("Your HP is currently at " + Health + "!");
@@ -578,6 +582,7 @@ internal class Program
                                     fighting = false;
                                     combat = false;
                                     lose += 1;
+                                    Health = 5;
                                     break;
                                 }
                                 fighting = false;
@@ -603,7 +608,6 @@ internal class Program
                         {
                             combat = false;
                             draw += 1;
-                            Console.ReadLine();
                         }
                         if (response == "4")
                         {
@@ -690,17 +694,21 @@ internal class Program
                         Console.WriteLine("You ran away! \n 0 EXP EARNED");
                         Console.ReadLine();
                     }
-
+                    while (losewin == 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Welcome back");
+                        losewin = 0;
+                        Console.ReadLine();
+                        combat = true;
+                    }
 
                 }
-                while (losewin == 0)
+                if (answermenu == "7")
                 {
-                    Console.Clear();
-                    Console.WriteLine("Welcome back");
-                    losewin = 0;
-                    Console.ReadLine();
-                    combat = true;
+                    Console.WriteLine("");
                 }
+               
             }
 
 
