@@ -288,7 +288,33 @@ static void Main(string[] args)
                 string answermenu = Console.ReadLine();
                 if (answermenu == "1")
                 {
-                    
+                    Console.WriteLine(@"                T\ T\");
+                    Console.WriteLine(@"                | \| \");
+                    Console.WriteLine(@"                |  |  :");
+                    Console.WriteLine(@"           _____I__I  |");
+                    Console.WriteLine(@"         .'            '.");
+                    Console.WriteLine(@"       .'                '");
+                    Console.WriteLine(@"       |   ..             '");
+                    Console.WriteLine(@"       |  /__.            |");
+                    Console.WriteLine(@"       :.' -'             |");
+                    Console.WriteLine(@"      /__.                |");
+                    Console.WriteLine(@"     /__, \               |");
+                    Console.WriteLine(@"        |__\        _|    |");
+                    Console.WriteLine(@"        :  '\     .'|     |");
+                    Console.WriteLine(@"        |___|_,,,/  |     |    _..--.");
+                    Console.WriteLine(@"     ,--_-   |     /'      \../ /  /\\");
+                    Console.WriteLine(@"    ,'|_ I---|    7    ,,,_/ / ,  / _\\");
+                    Console.WriteLine(@"  ,-- 7 \|  / ___..,,/   /  ,  ,_/   '-----.");
+                    Console.WriteLine(@" /   ,   \  |/  ,____,,,__,,__/            '\");
+                    Console.WriteLine(@",   ,     \__,,/                             |");
+                    Console.WriteLine(@"| '.       _..---.._                         !.");
+                    Console.WriteLine(@"! |      .' z_M__s. '.                        |");
+                    Console.WriteLine(@".:'      | (-_ _--')  :          L            !");
+                    Console.WriteLine(@".'.       '.  Y    _.'             \,         :");
+                    Console.WriteLine(@" .          '-----'                 !          .");
+                    Console.WriteLine(@" .           /  \                   .          .");
+                    Console.ReadLine();
+                    Console.Clear();
 
 
                 }
