@@ -57,7 +57,11 @@ static void Main(string[] args)
         int draw = 0;
         double enemyhp = 0;
         /*combat in world 1 */
+        int weaponworld1min = 1;
+        int weaponworld1max = 5;
+        int weaponworld1 = rng.Next(weaponworld1min, weaponworld1max);
         int weaponid = 0;
+        int weaponcurrent = 0;
         string weaponname = "";
         double health = rng.Next(hpmin, hpmax);
         double damage = rng.Next(dmgmin, dmgmax);
@@ -65,8 +69,30 @@ static void Main(string[] args)
         //var (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
         /*  weapon check id 
          */
-        int weaponcheck = 1;
-        int weaponcheck = 24;
+        int weaponcheckid1 = 0;
+        int weaponcheckid2 = 0;
+        int weaponcheckid3 = 0;
+        int weaponcheckid4 = 0;
+        int weaponcheckid5 = 0;
+        int weaponcheckid6 = 0;
+        int weaponcheckid7 = 0;
+        int weaponcheckid8 = 0;
+        int weaponcheckid9 = 0;
+        int weaponcheckid10 = 0;
+        int weaponcheckid11 = 0;
+        int weaponcheckid12 = 0;
+        int weaponcheckid13 = 0;
+        int weaponcheckid14 = 0;
+        int weaponcheckid15 = 0;
+        int weaponcheckid16 = 0;
+        int weaponcheckid17 = 0;
+        int weaponcheckid18 = 0;
+        int weaponcheckid19 = 0;
+        int weaponcheckid20 = 0;
+        int weaponcheckid21 = 0;
+        int weaponcheckid22 = 0;
+        int weaponcheckid23 = 0;
+        int weaponcheckid24 = 0;
         var weaponName = string.Empty;
         double attackvalue = rng.Next(dmgmin, dmgmax); 
 
@@ -75,7 +101,8 @@ static void Main(string[] args)
             
             
                 Console.WriteLine("Type your name here");
-            Console.WriteLine("DP:" + damage);
+            //Console.WriteLine("DP:" + attackvalue);
+            //Console.WriteLine("Base:" + damage);
                 string name = Console.ReadLine();
                 Console.WriteLine("Your character is going to be named " + name + ". Are you sure? \n Y/N");
                 string answername = Console.ReadLine();
@@ -134,7 +161,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Sword";
                         weaponid = 1;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
+                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                     }
                     if (answerweapon == "2")
                     {
@@ -142,7 +169,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Slingshot";
                         weaponid = 9;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
+                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                     }
                     if (answerweapon == "3")
                     {
@@ -150,7 +177,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Spear";
                         weaponid = 17;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
+                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24 );
                     }
                     while (start == true)
                     {
@@ -200,7 +227,7 @@ static void Main(string[] args)
                             string answertrait = Console.ReadLine();
                             if (answertrait == "1")
                             {
-                                damage = damage * 0.25 + damage;
+                                attackvalue = damage * 0.25 + damage;
                                 Console.WriteLine("Your DP is now " + damage + ".");
                                 start3 = true;
                                 attackplus += 1;
@@ -233,7 +260,7 @@ static void Main(string[] args)
                                 Console.WriteLine(answerfood);
                                 Console.WriteLine(answertrait);
                                 Thread.Sleep(1000);
-                                Console.WriteLine("Do you want to continue or go back and change loadout? \n1. change \n2. continue");
+                                Console.WriteLine("Do you want to continue or go back and change loadout? \n1. change and reroll\n2. continue");
                                 string answerloadout = Console.ReadLine();
                                 if (answerloadout == "1")
                                 {
@@ -258,7 +285,7 @@ static void Main(string[] args)
                                 {
                                     tutorial = 1;
                                     Console.Clear();
-                                    (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
+                                    (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                 }
                             }
 
@@ -440,7 +467,7 @@ static void Main(string[] args)
                                 while (fighting == true)
                                 {
                                     Console.WriteLine("The " + enemynew + " did " + enemyattackincome + " damage!");
-                                    health -= enemyattackincome;
+                                    health -= enemyattackincome = enemyattack.Next(attackmin, attackmax);
                                     Console.WriteLine("Your HP is currently at " + health + "!");
                                     if (health <= 0)
                                     {
@@ -454,7 +481,7 @@ static void Main(string[] args)
                             }
                             if (response == "2")
                             {
-                                double defendattack = enemyattackincome * 0.25;
+                                double defendattack = enemyattack.Next(attackmin, attackmax) * 0.25;
                                 double defendhealth = health -= defendattack;
                                 Console.WriteLine("The enemy did " + defendattack + " damage!");
                                 Console.WriteLine("Your HP is now " + health + "!");
@@ -544,6 +571,21 @@ static void Main(string[] args)
                             }
                             Console.WriteLine("Press enter to continue");
                             Console.ReadLine();
+                            Console.Clear();
+                            weaponworld1 = rng.Next(weaponworld1min, weaponworld1max);
+                            string weaponnameworld1 = string.Empty;
+                            if (weaponworld1 == 1)
+                            {
+                                weaponnameworld1 = "Wooden Sword";
+                                if (weaponcurrent > 1)
+                                {
+
+                                }
+                                weaponcurrent = 1;
+                                
+                            }
+                            Console.WriteLine("The enemy dropped a ");
+
 
                         }
                         if (lose != 0)
@@ -573,8 +615,8 @@ static void Main(string[] args)
                 {
                     int boss = 0;
                     string enemyboss = "Sonic";
-                    enemyhp = 1;
-                    double bossattackincome = enemyattackincome * 15;
+                    enemyhp = 50;
+                    double bossattackincome = enemyattackincome * 1;
                     Console.WriteLine(@"       ___------__");
                     Console.WriteLine(@" |\__-- /\       _-");
                     Console.WriteLine(@" |/    __      -");
@@ -728,12 +770,13 @@ static void Main(string[] args)
                         }
                         Console.WriteLine("Sonic dropped a Legendary ScarL!");
                         /* Weapon needed here */
-                        Console.WriteLine("Pick up ScarL?");
+                        Console.WriteLine("Pick up ScarL? \n y/n");
                         string answersonic = Console.ReadLine();
                         if (answersonic == "y")
                         {
                             weaponid = 15;
-                            (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
+                            (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                            weaponcheckid16 = 1;
                         }
                         if (answersonic == "n")
                         {
@@ -878,7 +921,9 @@ static void Main(string[] args)
                     { 
                         Console.WriteLine("Hello " + name + "!");
                         Console.WriteLine($"Your current weapon is {weaponName} Your weapon currently does {attackvalue} damage.");
+                        Console.WriteLine("Press Enter to continue");
                         Console.ReadLine();
+                        playerinv = false;
                         
                     }
                     
@@ -942,9 +987,9 @@ static void Main(string[] args)
         }
         return enemyname;
     }
-    static (string, double) Weapon(int weaponid, string weaponname, double attackvalue, double damage)
-    {
-        double[] damagee = {damage,attackvalue };
+    static (string, double) Weapon(int weaponid, string weaponname, double attackvalue, double damage, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid4, int weaponcheckid5, int weaponcheckid6, int weaponcheckid7, int weaponcheckid8, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid12, int weaponcheckid13, int weaponcheckid14, int weaponcheckid15, int weaponcheckid16, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19, int weaponcheckid20, int weaponcheckid21, int weaponcheckid22, int weaponcheckid23, int weaponcheckid24)
+    {                                                                                                       
+        double[] damagee = {damage,attackvalue };                                                           
         damagee[1] += 4;
         if (weaponid == 0)
         {
@@ -953,122 +998,194 @@ static void Main(string[] args)
         else if (weaponid == 1)
         {
             weaponname = "Wooden Sword";
+            if (weaponcheckid1 > 1)
+            { 
             attackvalue = damage * 1.25;
-        }
-        else if (weaponid == 2)
-        {
+            }
+        }                                                                                                   
+        else if (weaponid == 2)                                                                             
+        {                                                                                                   
             weaponname = "Iron Sword";
-            attackvalue = damage * 1.25;
-        }
-        else if (weaponid == 3)
-        {
+            if (weaponcheckid2 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
+        }                                                                                                   
+        else if (weaponid == 3)                                                                             
+        {                                                                                                   
             weaponname = "Steel Sword";
-            attackvalue = damage * 1.25;
-        }
+            if (weaponcheckid3 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
+        }                                                                                                   
         else if (weaponid == 4)
         {
             weaponname = "Fire Sword";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid4 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 5)
         {
             weaponname = "Fire Blade";
-            attackvalue = damage * 1.25;
+            if(weaponcheckid5 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 6)
         {
             weaponname = "Lava Blade";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid6 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 7)
         {
             weaponname = "Volcano";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid7 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 8)
         {
             weaponname = "Prometheus";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid8 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 9)
         {
             weaponname = "Slingshot";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid9 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 10)
         {
             weaponname = "Steelshot";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid10 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 11)
         {
             weaponname = "Bow";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid11 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 12)
         {
             weaponname = "Crossbow";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid12 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 13)
         {
             weaponname = "Pickle Launcher";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid13 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 14)
         {
             weaponname = "Fat Man";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid14 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 15)
         {
             weaponname = "Scar-L";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid15 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 16)
         {
             weaponname = "Ragnarok";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid16 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 17)
         {
             weaponname = "Wooden Spear";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid17 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 18)
         {
             weaponname = "Iron Spear";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid18 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 19)
         {
             weaponname = "Steel Spear";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid19 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 20)
         {
             weaponname = "Ice Spear";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid20 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 21)
         {
             weaponname = "Ice Cube";
-            attackvalue = damage * 1.25;
+            if(weaponcheckid21 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 22)
         {
             weaponname = "Glacier";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid22 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 23)
         {
             weaponname = "Niflheim";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid23 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         else if (weaponid == 24)
         {
             weaponname = "Wand of Ullr";
-            attackvalue = damage * 1.25;
+            if (weaponcheckid24 > 1)
+            {
+                attackvalue = damage * 1.25;
+            }
         }
         return (weaponname, attackvalue);
     }
