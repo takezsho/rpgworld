@@ -63,15 +63,19 @@ static void Main(string[] args)
         double damage = rng.Next(dmgmin, dmgmax);
         double Luck = rng.Next(luckmin, luckmax);
         //var (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
-
+        /*  weapon check id 
+         */
+        int weaponcheck = 1;
+        int weaponcheck = 24;
         var weaponName = string.Empty;
-        double damageValue = 0;
+        double attackvalue = rng.Next(dmgmin, dmgmax); 
 
         while (engine = true)
         { 
             
             
                 Console.WriteLine("Type your name here");
+            Console.WriteLine("DP:" + damage);
                 string name = Console.ReadLine();
                 Console.WriteLine("Your character is going to be named " + name + ". Are you sure? \n Y/N");
                 string answername = Console.ReadLine();
@@ -92,7 +96,7 @@ static void Main(string[] args)
             if (answername == "Y")
                 {
                 Console.WriteLine("Your name is " + name + ".");
-                Console.WriteLine("Press eneter to continue");
+                Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
                 Console.Clear();
                 }
@@ -130,7 +134,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Sword";
                         weaponid = 1;
-                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
+                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
                     }
                     if (answerweapon == "2")
                     {
@@ -138,7 +142,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Slingshot";
                         weaponid = 9;
-                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
+                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
                     }
                     if (answerweapon == "3")
                     {
@@ -146,7 +150,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Spear";
                         weaponid = 17;
-                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
+                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
                     }
                     while (start == true)
                     {
@@ -254,7 +258,7 @@ static void Main(string[] args)
                                 {
                                     tutorial = 1;
                                     Console.Clear();
-                                    (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
+                                    (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
                                 }
                             }
 
@@ -273,7 +277,7 @@ static void Main(string[] args)
             Console.WriteLine("You can also earn coins from enemies or chests to buy stuff from the blacksmith for better weapons.");
             Console.WriteLine("You could also just plant the apple seeds in your house but whats the fun in that?");
             Console.WriteLine("Your Hit point is = " + health);
-            Console.WriteLine("Your Damage point is = " + damage);
+            Console.WriteLine("Your Damage point is = " + attackvalue);
             Console.WriteLine("Your Luck point is = " + Luck);
             Console.WriteLine("Go to intro to start the game");
             Console.WriteLine("Press enter to Continue");
@@ -415,14 +419,14 @@ static void Main(string[] args)
                                 critical = rnd.Next(critmin, critmax);
                                 if (critical < Luck)
                                 {
-                                    damageValue = damageValue * 1.25;
+                                    attackvalue = attackvalue * 1.25;
                                     Console.WriteLine("That was a critical hit!");
                                     enemyhp -= damage;
-                                    damageValue = damageValue * 0.8;
+                                    attackvalue = attackvalue * 0.8;
                                 }
                                 else
                                 {
-                                    enemyhp -= damageValue;
+                                    enemyhp -= attackvalue;
                                 }
                                 enemyattackincome = enemyattack.Next(attackmin, attackmax);
                                 Console.WriteLine("The " + enemynew + " has " + enemyhp + " hp!");
@@ -569,7 +573,7 @@ static void Main(string[] args)
                 {
                     int boss = 0;
                     string enemyboss = "Sonic";
-                    enemyhp = 50;
+                    enemyhp = 1;
                     double bossattackincome = enemyattackincome * 15;
                     Console.WriteLine(@"       ___------__");
                     Console.WriteLine(@" |\__-- /\       _-");
@@ -599,14 +603,14 @@ static void Main(string[] args)
                             critical = rnd.Next(critmin, critmax);
                             if (critical < Luck)
                             {
-                                damageValue = damageValue * 1.25;
+                                attackvalue = attackvalue * 1.25;
                                 Console.WriteLine("That was a critical hit!");
                                 enemyhp -= damage;
-                                damageValue = damageValue * 0.8;
+                                attackvalue = attackvalue * 0.8;
                             }
                             else
                             {
-                                enemyhp -= damageValue;
+                                enemyhp -= attackvalue;
                             }
                             enemyattackincome = enemyattack.Next(attackmin, attackmax);
                             Console.WriteLine("The " + enemyboss + " has " + enemyhp + " hp!");
@@ -724,6 +728,17 @@ static void Main(string[] args)
                         }
                         Console.WriteLine("Sonic dropped a Legendary ScarL!");
                         /* Weapon needed here */
+                        Console.WriteLine("Pick up ScarL?");
+                        string answersonic = Console.ReadLine();
+                        if (answersonic == "y")
+                        {
+                            weaponid = 15;
+                            (weaponName, attackvalue) = Weapon(weaponid, weaponname, damage, attackvalue);
+                        }
+                        if (answersonic == "n")
+                        {
+
+                        }
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
 
@@ -824,7 +839,7 @@ static void Main(string[] args)
             * 20.Prime - MORE ENERGY MORE POWER Increases your attack by 45% for only 1 attack
             * 21.Nicholas's Milk - Increases attack for 1 turn by 75%
             * 22.Monster Energy - Concentration up! Double Damage for 1 turn
-            * 23.Shoma's Milk - Clones you 2 times. TRIPLE DAMAGE
+            * 23.Keagan's Milk - Clones you 2 times. TRIPLE DAMAGE
             * 24.Ice Tea - relax and lose a turn
             * 25.ITEM GENERAL
             * .
@@ -848,7 +863,7 @@ static void Main(string[] args)
             * .World 3
             * 7.Nikocado - no need for armor when you got fat, 75% more health
             * 8.Boulder - Wear the boulder, become the boulder 80% more health
-            * 9.Eliots ego - 85% more health
+            * 9.Eliots Rizz - 85% more health
             * 1.World 4
             * 10.Shepherd of Fury - 140% more health
             * 11.Adamantite Cuirass of Fleeting Punishment - 145% more health
@@ -860,21 +875,11 @@ static void Main(string[] args)
                     
                     playerinv = true;
                     while (playerinv == true)
-                    {
-                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
-                        Console.WriteLine($"My weapon name is {weaponName} and damage is {damageValue}");
-
-                        Console.WriteLine("1. Weapons \n2. Item \n3. Armor");
+                    { 
                         Console.WriteLine("Hello " + name + "!");
-                        string answerinv = Console.ReadLine();
-                        if (answerinv == "1")
-                        {
-                            Console.WriteLine($"Your current weapon is {weaponName} Your weapon currently does {damageValue} damage.");
-                        }
-                        if (answerinv == "2")
-                        { 
-
-                        }
+                        Console.WriteLine($"Your current weapon is {weaponName} Your weapon currently does {attackvalue} damage.");
+                        Console.ReadLine();
+                        
                     }
                     
                     
@@ -937,8 +942,10 @@ static void Main(string[] args)
         }
         return enemyname;
     }
-    static (string, double) Weapon(int weaponid, string weaponname, double damage)
-    { 
+    static (string, double) Weapon(int weaponid, string weaponname, double attackvalue, double damage)
+    {
+        double[] damagee = {damage,attackvalue };
+        damagee[1] += 4;
         if (weaponid == 0)
         {
             weaponname = "Fist";
@@ -946,103 +953,123 @@ static void Main(string[] args)
         else if (weaponid == 1)
         {
             weaponname = "Wooden Sword";
-            damage = damage * 0.25 + damage;
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 2)
         {
             weaponname = "Iron Sword";
-            damage = damage * 3;
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 3)
         {
             weaponname = "Steel Sword";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 4)
         {
             weaponname = "Fire Sword";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 5)
         {
             weaponname = "Fire Blade";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 6)
         {
             weaponname = "Lava Blade";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 7)
         {
             weaponname = "Volcano";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 8)
         {
-            weaponname = "The Destructer";
+            weaponname = "Prometheus";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 9)
         {
             weaponname = "Slingshot";
-            damage = damage * 0.25 + damage;
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 10)
         {
             weaponname = "Steelshot";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 11)
         {
             weaponname = "Bow";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 12)
         {
             weaponname = "Crossbow";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 13)
         {
             weaponname = "Pickle Launcher";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 14)
         {
             weaponname = "Fat Man";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 15)
         {
             weaponname = "Scar-L";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 16)
         {
             weaponname = "Ragnarok";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 17)
         {
             weaponname = "Wooden Spear";
-            damage = damage * 0.25 + damage;
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 18)
         {
             weaponname = "Iron Spear";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 19)
         {
             weaponname = "Steel Spear";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 20)
         {
             weaponname = "Ice Spear";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 21)
         {
             weaponname = "Ice Cube";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 22)
         {
             weaponname = "Glacier";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 23)
         {
             weaponname = "Niflheim";
+            attackvalue = damage * 1.25;
         }
         else if (weaponid == 24)
         {
             weaponname = "Wand of Ullr";
+            attackvalue = damage * 1.25;
         }
-        return (weaponname, damage);
+        return (weaponname, attackvalue);
     }
 }
