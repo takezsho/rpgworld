@@ -59,9 +59,14 @@ static void Main(string[] args)
         /*combat in world 1 */
         int weaponid = 0;
         string weaponname = "";
-        double Health = rng.Next(hpmin, hpmax);
-        double Damage = rng.Next(dmgmin, dmgmax);
+        double health = rng.Next(hpmin, hpmax);
+        double damage = rng.Next(dmgmin, dmgmax);
         double Luck = rng.Next(luckmin, luckmax);
+        //var (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
+
+        var weaponName = string.Empty;
+        double damageValue = 0;
+
         while (engine = true)
         { 
             
@@ -125,6 +130,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Sword";
                         weaponid = 1;
+                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
                     }
                     if (answerweapon == "2")
                     {
@@ -132,6 +138,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Slingshot";
                         weaponid = 9;
+                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
                     }
                     if (answerweapon == "3")
                     {
@@ -139,6 +146,7 @@ static void Main(string[] args)
                         start = true;
                         answerweapon = "Spear";
                         weaponid = 17;
+                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
                     }
                     while (start == true)
                     {
@@ -188,16 +196,16 @@ static void Main(string[] args)
                             string answertrait = Console.ReadLine();
                             if (answertrait == "1")
                             {
-                                Damage = Damage * 0.25 + Damage;
-                                Console.WriteLine("Your DP is now " + Damage + ".");
+                                damage = damage * 0.25 + damage;
+                                Console.WriteLine("Your DP is now " + damage + ".");
                                 start3 = true;
                                 attackplus += 1;
                                 answertrait = "Attack+";
                             }
                             if (answertrait == "2")
                             {
-                                Health = Health * 0.15 + Health;
-                                Console.WriteLine("Your HP is now " + Health + ".");
+                                health = health * 0.15 + health;
+                                Console.WriteLine("Your HP is now " + health + ".");
                                 start3 = true;
                                 defenseplus += 1;
                                 answertrait = "Defense+";
@@ -246,6 +254,7 @@ static void Main(string[] args)
                                 {
                                     tutorial = 1;
                                     Console.Clear();
+                                    (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
                                 }
                             }
 
@@ -263,8 +272,8 @@ static void Main(string[] args)
             Console.WriteLine(" You need to defeat enemies to level up and upgrade your character. You can also take their weapon for better attacks.");
             Console.WriteLine("You can also earn coins from enemies or chests to buy stuff from the blacksmith for better weapons.");
             Console.WriteLine("You could also just plant the apple seeds in your house but whats the fun in that?");
-            Console.WriteLine("Your Hit point is = " + Health);
-            Console.WriteLine("Your Damage point is = " + Damage);
+            Console.WriteLine("Your Hit point is = " + health);
+            Console.WriteLine("Your Damage point is = " + damage);
             Console.WriteLine("Your Luck point is = " + Luck);
             Console.WriteLine("Go to intro to start the game");
             Console.WriteLine("Press enter to Continue");
@@ -320,8 +329,8 @@ static void Main(string[] args)
                 }
                 if (answermenu == "2")
                 {
-                    Console.WriteLine("Your current HP is " + Health + ".");
-                    Console.WriteLine("Your current DP is " + Damage + ".");
+                    Console.WriteLine("Your current HP is " + health + ".");
+                    Console.WriteLine("Your current DP is " + damage + ".");
                     Console.WriteLine("Your current LK is " + Luck + ".");
                     Console.WriteLine("Press enter to Continue");
                     Console.ReadLine();
@@ -394,7 +403,7 @@ static void Main(string[] args)
                         {
                             enemyhp = 6000;
                         }
-                        Console.WriteLine("You currently have " + Health + " HP.");
+                        Console.WriteLine("You currently have " + health + " HP.");
                         Console.WriteLine("The " + enemynew + " has " + enemyhp + " HP.");
                         do
                         {
@@ -406,14 +415,14 @@ static void Main(string[] args)
                                 critical = rnd.Next(critmin, critmax);
                                 if (critical < Luck)
                                 {
-                                    Damage = Damage * 1.25;
+                                    damageValue = damageValue * 1.25;
                                     Console.WriteLine("That was a critical hit!");
-                                    enemyhp -= Damage;
-                                    Damage = Damage * 0.8;
+                                    enemyhp -= damage;
+                                    damageValue = damageValue * 0.8;
                                 }
                                 else
                                 {
-                                    enemyhp -= Damage;
+                                    enemyhp -= damageValue;
                                 }
                                 enemyattackincome = enemyattack.Next(attackmin, attackmax);
                                 Console.WriteLine("The " + enemynew + " has " + enemyhp + " hp!");
@@ -427,9 +436,9 @@ static void Main(string[] args)
                                 while (fighting == true)
                                 {
                                     Console.WriteLine("The " + enemynew + " did " + enemyattackincome + " damage!");
-                                    Health -= enemyattackincome;
-                                    Console.WriteLine("Your HP is currently at " + Health + "!");
-                                    if (Health <= 0)
+                                    health -= enemyattackincome;
+                                    Console.WriteLine("Your HP is currently at " + health + "!");
+                                    if (health <= 0)
                                     {
                                         fighting = false;
                                         combat = false;
@@ -442,16 +451,16 @@ static void Main(string[] args)
                             if (response == "2")
                             {
                                 double defendattack = enemyattackincome * 0.25;
-                                double defendhealth = Health -= defendattack;
+                                double defendhealth = health -= defendattack;
                                 Console.WriteLine("The enemy did " + defendattack + " damage!");
-                                Console.WriteLine("Your HP is now " + Health + "!");
+                                Console.WriteLine("Your HP is now " + health + "!");
                                 Console.WriteLine("Ultimate charged by 1.");
-                                if (Health <= 0)
+                                if (health <= 0)
                                 {
                                     fighting = false;
                                     combat = false;
                                     lose += 1;
-                                    Health = 5;
+                                    health = 5;
                                     break;
                                 }
                                 bigattack += 1;
@@ -466,7 +475,7 @@ static void Main(string[] args)
                             {
                                 if (bigattack > 2)
                                 {
-                                    double ultimate = Damage * 3.75;
+                                    double ultimate = damage * 3.75;
                                     Console.WriteLine("ULTIMATE ATTACK!");
                                     enemyhp -= ultimate;
                                     Thread.Sleep(1000);
@@ -526,8 +535,8 @@ static void Main(string[] args)
                                 level += 1;
                                 Console.WriteLine("Level up! \nYour level is now at " + level + ". \nDamage and Health up!");
                                 exptotal = 0;
-                                Damage = Damage * 0.05 + Damage;
-                                Health = Health * 0.05 + Health;
+                                damage = damage * 0.05 + damage;
+                                health = health * 0.05 + health;
                             }
                             Console.WriteLine("Press enter to continue");
                             Console.ReadLine();
@@ -578,7 +587,7 @@ static void Main(string[] args)
                     Console.WriteLine(@"  /_____\ /___\");
                     Console.WriteLine(@"______________________");
                     Console.WriteLine(" \n A wild Sonic appeared!");
-                    Console.WriteLine("You currently have " + Health + " HP.");
+                    Console.WriteLine("You currently have " + health + " HP.");
                     Console.WriteLine("The " + enemyboss + " has " + enemyhp + " HP.");
                     do
                     {
@@ -590,14 +599,14 @@ static void Main(string[] args)
                             critical = rnd.Next(critmin, critmax);
                             if (critical < Luck)
                             {
-                                Damage = Damage * 1.25;
+                                damageValue = damageValue * 1.25;
                                 Console.WriteLine("That was a critical hit!");
-                                enemyhp -= Damage;
-                                Damage = Damage * 0.8;
+                                enemyhp -= damage;
+                                damageValue = damageValue * 0.8;
                             }
                             else
                             {
-                                enemyhp -= Damage;
+                                enemyhp -= damageValue;
                             }
                             enemyattackincome = enemyattack.Next(attackmin, attackmax);
                             Console.WriteLine("The " + enemyboss + " has " + enemyhp + " hp!");
@@ -612,14 +621,14 @@ static void Main(string[] args)
                             {
                                 Console.WriteLine("Sonic used sneeze!");
                                 Console.WriteLine("The " + enemyboss + " did " + bossattackincome + " damage!");
-                                Health -= bossattackincome;
-                                Console.WriteLine("Your HP is currently at " + Health + "!");
-                                if (Health <= 0)
+                                health -= bossattackincome;
+                                Console.WriteLine("Your HP is currently at " + health + "!");
+                                if (health <= 0)
                                 {
                                     fighting = false;
                                     combat = false;
                                     lose += 1;
-                                    Health = 5;
+                                    health = 5;
                                     break;
                                 }
                                 fighting = false;
@@ -628,11 +637,11 @@ static void Main(string[] args)
                         if (response == "2")
                         {
                             double defendattack = bossattackincome * 0.25;
-                            double defendhealth = Health -= defendattack;
+                            double defendhealth = health -= defendattack;
                             Console.WriteLine("The enemy did " + defendattack + " damage!");
-                            Console.WriteLine("Your HP is now " + Health + "!");
+                            Console.WriteLine("Your HP is now " + health + "!");
                             Console.WriteLine("Ultimate charged by 1.");
-                            if (Health <= 0)
+                            if (health <= 0)
                             {
                                 fighting = false;
                                 combat = false;
@@ -650,7 +659,7 @@ static void Main(string[] args)
                         {
                             if (bigattack > 4)
                             {
-                                double ultimate = Damage * 3.75;
+                                double ultimate = damage * 3.75;
                                 Console.WriteLine("ULTIMATE ATTACK!");
                                 enemyhp -= ultimate;
                                 Thread.Sleep(1000);
@@ -710,8 +719,8 @@ static void Main(string[] args)
                             level += 1;
                             Console.WriteLine("Level up! \nYour level is now at " + level + ". \nDamage and Health up!");
                             exptotal = 0;
-                            Damage = Damage * 0.05 + Damage;
-                            Health = Health * 0.05 + Health;
+                            damage = damage * 0.05 + damage;
+                            health = health * 0.05 + health;
                         }
                         Console.WriteLine("Sonic dropped a Legendary ScarL!");
                         /* Weapon needed here */
@@ -852,13 +861,19 @@ static void Main(string[] args)
                     playerinv = true;
                     while (playerinv == true)
                     {
-                        Weapon(weaponid, weaponname, Damage);
+                        (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
+                        Console.WriteLine($"My weapon name is {weaponName} and damage is {damageValue}");
+
                         Console.WriteLine("1. Weapons \n2. Item \n3. Armor");
                         Console.WriteLine("Hello " + name + "!");
                         string answerinv = Console.ReadLine();
                         if (answerinv == "1")
                         {
-                            Console.WriteLine("you now do " + Damage);
+                            Console.WriteLine($"Your current weapon is {weaponName} Your weapon currently does {damageValue} damage.");
+                        }
+                        if (answerinv == "2")
+                        { 
+
                         }
                     }
                     
@@ -922,7 +937,7 @@ static void Main(string[] args)
         }
         return enemyname;
     }
-    static string Weapon(int weaponid, string weaponname, double Damage)
+    static (string, double) Weapon(int weaponid, string weaponname, double damage)
     { 
         if (weaponid == 0)
         {
@@ -931,10 +946,12 @@ static void Main(string[] args)
         else if (weaponid == 1)
         {
             weaponname = "Wooden Sword";
+            damage = damage * 0.25 + damage;
         }
         else if (weaponid == 2)
         {
             weaponname = "Iron Sword";
+            damage = damage * 3;
         }
         else if (weaponid == 3)
         {
@@ -963,6 +980,7 @@ static void Main(string[] args)
         else if (weaponid == 9)
         {
             weaponname = "Slingshot";
+            damage = damage * 0.25 + damage;
         }
         else if (weaponid == 10)
         {
@@ -995,6 +1013,7 @@ static void Main(string[] args)
         else if (weaponid == 17)
         {
             weaponname = "Wooden Spear";
+            damage = damage * 0.25 + damage;
         }
         else if (weaponid == 18)
         {
@@ -1024,6 +1043,6 @@ static void Main(string[] args)
         {
             weaponname = "Wand of Ullr";
         }
-        return weaponname;
+        return (weaponname, damage);
     }
 }
