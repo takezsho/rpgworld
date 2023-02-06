@@ -17,7 +17,7 @@ internal class Program
         bool mainmenu = true;
         bool start = false;
         bool inv = true;
-        bool playerinv = false;
+        bool playerinv = true;
         bool invcheck = true;
         bool start2 = false;
         bool start3 = false;
@@ -79,20 +79,17 @@ internal class Program
         int weaponcheckid8 = 0;
         int weaponcheckid9 = 0;
         int weaponcheckid10 = 0;
-        int weaponcheckid11 = 0;
-        int weaponcheckid12 = 0;
-        int weaponcheckid13 = 0;
-        int weaponcheckid14 = 0;
-        int weaponcheckid15 = 0;
-        int weaponcheckid16 = 0;
-        int weaponcheckid17 = 0;
-        int weaponcheckid18 = 0;
-        int weaponcheckid19 = 0;
-        int weaponcheckid20 = 0;
-        int weaponcheckid21 = 0;
-        int weaponcheckid22 = 0;
-        int weaponcheckid23 = 0;
-        int weaponcheckid24 = 0;
+        int weaponidchecker1 = 0;
+        int weaponidchecker2 = 0;
+        int weaponidchecker3 = 0;
+        int weaponidchecker4 = 0;
+        int weaponidchecker5 = 0;
+        int weaponidchecker6 = 0;
+        int weaponidchecker7 = 0;
+        int weaponidchecker8 = 0;
+        int weaponidchecker9 = 0;
+        int weaponidchecker10 = 0;
+        int[] weaponchecker = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         var weaponName = string.Empty;
         double attackvalue = rng.Next(dmgmin, dmgmax);
 
@@ -130,7 +127,7 @@ internal class Program
             if (answername == "y")
             {
                 Console.WriteLine("Your name is " + name + ".");
-                Console.WriteLine("Press eneter to continue");
+                Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
                 Console.Clear();
             }
@@ -161,7 +158,7 @@ internal class Program
                         start = true;
                         answerweapon = "Sword";
                         weaponid = 1;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                     }
                     if (answerweapon == "2")
                     {
@@ -169,7 +166,7 @@ internal class Program
                         start = true;
                         answerweapon = "Slingshot";
                         weaponid = 9;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                     }
                     if (answerweapon == "3")
                     {
@@ -177,7 +174,7 @@ internal class Program
                         start = true;
                         answerweapon = "Spear";
                         weaponid = 17;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                     }
                     while (start == true)
                     {
@@ -185,6 +182,7 @@ internal class Program
                         {
                             break;
                         }
+                        weaponcurrent = 1;
                         int apple = 0;
                         int pear = 0;
                         int durian = 0;
@@ -285,7 +283,7 @@ internal class Program
                                 {
                                     tutorial = 1;
                                     Console.Clear();
-                                    (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                    (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                                 }
                             }
 
@@ -601,7 +599,7 @@ internal class Program
                                         weaponid = 1;
                                         weaponcurrent = 1;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                                         weaponcheckid1 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -631,7 +629,7 @@ internal class Program
                                         weaponid = 9;
                                         weaponcurrent = 1;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                                         weaponcheckid9 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -658,11 +656,11 @@ internal class Program
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
                                     {
-                                        weaponid = 17;
+                                        weaponid = 4;
                                         weaponcurrent = 1;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
-                                        weaponcheckid17 = 1;
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
+                                        weaponcheckid4 = 1;
                                     }
                                     if (pickupansweralt == "2")
                                     {
@@ -692,7 +690,7 @@ internal class Program
                                         weaponcurrent = 2;
                                         Console.WriteLine("Item selected.");
 
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                                         weaponcheckid2 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -723,7 +721,7 @@ internal class Program
                                         weaponid = 10;
                                         weaponcurrent = 2;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                                         weaponcheckid10 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -750,11 +748,11 @@ internal class Program
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
                                     {
-                                        weaponid = 18;
+                                        weaponid = 5;
                                         weaponcurrent = 2;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
-                                        weaponcheckid18 = 1;
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
+                                        weaponcheckid5 = 1;
                                     }
                                     if (pickupansweralt == "2")
                                     {
@@ -783,7 +781,7 @@ internal class Program
                                         weaponid = 3;
                                         weaponcurrent = 3;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
                                         weaponcheckid3 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -810,11 +808,11 @@ internal class Program
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
                                     {
-                                        weaponid = 11;
+                                        weaponid = 8;
                                         weaponcurrent = 3;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
-                                        weaponcheckid11 = 1;
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
+                                        weaponcheckid8 = 1;
                                     }
                                     if (pickupansweralt == "2")
                                     {
@@ -840,11 +838,11 @@ internal class Program
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
                                     {
-                                        weaponid = 19;
+                                        weaponid = 6;
                                         weaponcurrent = 3;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
-                                        weaponcheckid19 = 1;
+                                        (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
+                                        weaponcheckid6 = 1;
                                     }
                                     if (pickupansweralt == "2")
                                     {
@@ -1038,15 +1036,15 @@ internal class Program
                                 damage = damage * 0.05 + damage;
                                 health = health * 0.05 + health;
                             }
-                            Console.WriteLine("Sonic dropped a Legendary ScarL!");
+                            Console.WriteLine("Sonic dropped a weapon!");
                             /* Weapon needed here */
-                            Console.WriteLine("Pick up ScarL? \n y/n");
+                            Console.WriteLine("Pick it up? \n y/n");
                             string answersonic = Console.ReadLine();
                             if (answersonic == "y")
                             {
-                                weaponid = 15;
-                                (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
-                                weaponcheckid16 = 1;
+                                weaponid = 5;
+                                (weaponName, attackvalue, weaponidchecker1, weaponidchecker2, weaponidchecker3, weaponidchecker4, weaponidchecker5, weaponidchecker6, weaponidchecker7, weaponidchecker8, weaponidchecker9, weaponidchecker10) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
+                                weaponcheckid5 = 1;
                             }
                             if (answersonic == "n")
                             {
@@ -1080,126 +1078,126 @@ internal class Program
                         }
 
                     }
-                    if (answermenu == "7")
+                    
+                    /* Inventory selection */
+                    /* WEAPONS SWORDS
+            * 
+            * 1.Wooden Sword
+            * 2.Iron Sword         
+            * 3.Steel Sword
+            * 4.Fire Sword
+            * 5.FIre Blade
+            * 6.Lava Blade
+            * 7.Volcano
+            * 8.The Destructer
+            * WEAPONS SLINGSHOT
+            * 
+            *9. Slingshot
+            * 10.Steelshot
+            * 11.Bow
+            * 12.Crossbow
+            * 13.Pickle Launcher
+            * 14.Fat Man
+            * 15.Scar-L
+            * 16. Ragnarok
+            * WEAPON SPEAR
+            * 
+            * 17.Wooden Spear
+            * 18.Iron Spear
+            * 19.Steel Spear
+            * 20.Ice Spear
+            * 21.Ice Cube
+            * 22.Galcier
+            * 23.Niflheim
+            * 24. Wand of Ullr
+            * ITEM FRUITS
+            * 
+            * 1.Apple - heals your character by 30%
+            * 2.Pear - Reduce enemy dp by 15% for 8 turns
+            * 3.Durian - Increases your attack by 20%
+            * 4.Dragon Fruit - Every attack for 5 turns does fire damages
+            * 5.Passion Fruit - Increases luck by 30%
+            * 6.Banana - Chance to slip and loose a turn
+            * 7.Strawberry - heals you by 50% but lose 10% attack for 5 turns
+            * 8.Tomato - Heals you by 20% but makes you flee
+            * 9.Raspberry - heals your character by 10%
+            * 10.Rotten Apple - Makes player lose 50 health each turn
+            * 11.Wild Berry - Reduce enemy dp by 40% but for only 3 turns
+            * 12.Blueberry - Heals your character by 5%
+            * 13.ITEM Drinks
+            * 
+            * 14.Chug Jug - Heals you by 75% but enemy gets a free hit
+            * 15.Slurp Juice - Heals you by 10% for 4 turns
+            * 16.Mini Pot - Heals you by 25%
+            * 17.Guzzle Juice - Double Attack for 1 turn
+            * 18.Water - Feels refreshing. Heals you by 10%
+            * 19.Coconut - Somewhat refreshing. Heals you by 5%
+            * 20.Prime - MORE ENERGY MORE POWER Increases your attack by 45% for only 1 attack
+            * 21.Nicholas's Milk - Increases attack for 1 turn by 75%
+            * 22.Monster Energy - Concentration up! Double Damage for 1 turn
+            * 23.Keagan's Milk - Clones you 2 times. TRIPLE DAMAGE
+            * 24.Ice Tea - relax and lose a turn
+            * 25.ITEM GENERAL
+            * .
+            * 26.Xbox Controller - Turn on aim assist and half their health (only works with normal enemies)
+            * 27.Nintendo Switch - Control the enemy and make him suffer. (Chance to insta kill)
+            * 28.Pencil - Stab them to do 15 damage
+            * 29.Tape - Blind their eyes. Get another turn
+            * 30.Hustlers Notebook - Double the exp you earn from this battle (excluding boss fights)
+            * 31.Keagans Laptop - Use his big cursor to enhance your attack by 50%
+            * 32.Quagmires laugh - His laugh will make the enemy stunned. Get another turn.
+            * 33.ARMOR
+            * .
+            * .World 1
+            * 1.Leather - 5% more health
+            * 2.Iron 10% more health
+            * 3.Steel 15% more health
+            * .World 2
+            * 4.Keagan - 20% more health
+            * 5.Shield of Faith 25% more health
+            * 6.Relentless Vest of the Breaking Storm 30% more health
+            * .World 3
+            * 7.Nikocado - no need for armor when you got fat, 75% more health
+            * 8.Boulder - Wear the boulder, become the boulder 80% more health
+            * 9.Eliots Rizz - 85% more health
+            * 1.World 4
+            * 10.Shepherd of Fury - 140% more health
+            * 11.Adamantite Cuirass of Fleeting Punishment - 145% more health
+            * 12.Spite Titanium Tunic - 150% more health
+            * 13.Yannick - 155% more health
+            * 14.Plot Armor - hp what for? 500000% more health
+            */
+                    /* Item od */
+
+                }
+                if (answermenu == "7")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Water or Milk?");
+                    string answermilk = Console.ReadLine();
+                    if (answermilk == "Water")
                     {
-                        Console.WriteLine("");
-                        Console.WriteLine("Water or Milk?");
-                        string answermilk = Console.ReadLine();
-                        if (answermilk == "Water")
-                        {
-                            Console.WriteLine("valid");
-                        }
-                        if (answermilk == "Milk")
-                        {
-                            Console.WriteLine("valid");
-                        }
+                        Console.WriteLine("valid");
                     }
-                    if (answermenu == "8")
+                    if (answermilk == "Milk")
                     {
-                        /* Inventory selection */
-                        /* WEAPONS SWORDS
-                * 
-                * 1.Wooden Sword
-                * 2.Iron Sword         
-                * 3.Steel Sword
-                * 4.Fire Sword
-                * 5.FIre Blade
-                * 6.Lava Blade
-                * 7.Volcano
-                * 8.The Destructer
-                * WEAPONS SLINGSHOT
-                * 
-                *9. Slingshot
-                * 10.Steelshot
-                * 11.Bow
-                * 12.Crossbow
-                * 13.Pickle Launcher
-                * 14.Fat Man
-                * 15.Scar-L
-                * 16. Ragnarok
-                * WEAPON SPEAR
-                * 
-                * 17.Wooden Spear
-                * 18.Iron Spear
-                * 19.Steel Spear
-                * 20.Ice Spear
-                * 21.Ice Cube
-                * 22.Galcier
-                * 23.Niflheim
-                * 24. Wand of Ullr
-                * ITEM FRUITS
-                * 
-                * 1.Apple - heals your character by 30%
-                * 2.Pear - Reduce enemy dp by 15% for 8 turns
-                * 3.Durian - Increases your attack by 20%
-                * 4.Dragon Fruit - Every attack for 5 turns does fire damages
-                * 5.Passion Fruit - Increases luck by 30%
-                * 6.Banana - Chance to slip and loose a turn
-                * 7.Strawberry - heals you by 50% but lose 10% attack for 5 turns
-                * 8.Tomato - Heals you by 20% but makes you flee
-                * 9.Raspberry - heals your character by 10%
-                * 10.Rotten Apple - Makes player lose 50 health each turn
-                * 11.Wild Berry - Reduce enemy dp by 40% but for only 3 turns
-                * 12.Blueberry - Heals your character by 5%
-                * 13.ITEM Drinks
-                * 
-                * 14.Chug Jug - Heals you by 75% but enemy gets a free hit
-                * 15.Slurp Juice - Heals you by 10% for 4 turns
-                * 16.Mini Pot - Heals you by 25%
-                * 17.Guzzle Juice - Double Attack for 1 turn
-                * 18.Water - Feels refreshing. Heals you by 10%
-                * 19.Coconut - Somewhat refreshing. Heals you by 5%
-                * 20.Prime - MORE ENERGY MORE POWER Increases your attack by 45% for only 1 attack
-                * 21.Nicholas's Milk - Increases attack for 1 turn by 75%
-                * 22.Monster Energy - Concentration up! Double Damage for 1 turn
-                * 23.Keagan's Milk - Clones you 2 times. TRIPLE DAMAGE
-                * 24.Ice Tea - relax and lose a turn
-                * 25.ITEM GENERAL
-                * .
-                * 26.Xbox Controller - Turn on aim assist and half their health (only works with normal enemies)
-                * 27.Nintendo Switch - Control the enemy and make him suffer. (Chance to insta kill)
-                * 28.Pencil - Stab them to do 15 damage
-                * 29.Tape - Blind their eyes. Get another turn
-                * 30.Hustlers Notebook - Double the exp you earn from this battle (excluding boss fights)
-                * 31.Keagans Laptop - Use his big cursor to enhance your attack by 50%
-                * 32.Quagmires laugh - His laugh will make the enemy stunned. Get another turn.
-                * 33.ARMOR
-                * .
-                * .World 1
-                * 1.Leather - 5% more health
-                * 2.Iron 10% more health
-                * 3.Steel 15% more health
-                * .World 2
-                * 4.Keagan - 20% more health
-                * 5.Shield of Faith 25% more health
-                * 6.Relentless Vest of the Breaking Storm 30% more health
-                * .World 3
-                * 7.Nikocado - no need for armor when you got fat, 75% more health
-                * 8.Boulder - Wear the boulder, become the boulder 80% more health
-                * 9.Eliots Rizz - 85% more health
-                * 1.World 4
-                * 10.Shepherd of Fury - 140% more health
-                * 11.Adamantite Cuirass of Fleeting Punishment - 145% more health
-                * 12.Spite Titanium Tunic - 150% more health
-                * 13.Yannick - 155% more health
-                * 14.Plot Armor - hp what for? 500000% more health
-                */
-                        /* Item od */
-
-                        playerinv = true;
-                        while (playerinv == true)
-                        {
-                            Console.WriteLine("Hello " + name + "!");
-                            Console.WriteLine($"Your current weapon is {weaponName} Your weapon currently does {attackvalue} damage.");
-                            Console.WriteLine("Press Enter to continue");
-                            Console.ReadLine();
-                            break;
-
-                        }
-
-
+                        Console.WriteLine("valid");
+                    }
+                }
+                if (answermenu == "8")
+                {
+                    playerinv = true;
+                    while (playerinv == true)
+                    {
+                        Console.WriteLine("Hello " + name + "!");
+                        Console.WriteLine($"Your current weapon is {weaponName} Your weapon currently does {attackvalue} damage.");
+                        Console.WriteLine("Press Enter to continue");
+                        Console.ReadLine();
+                        break;
 
                     }
+
+
 
                 }
 
@@ -1257,10 +1255,8 @@ internal class Program
             }
             return enemyname;
         }
-        static (string, double) Weapon(int weaponid, string weaponname, double attackvalue, double damage, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid4, int weaponcheckid5, int weaponcheckid6, int weaponcheckid7, int weaponcheckid8, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid12, int weaponcheckid13, int weaponcheckid14, int weaponcheckid15, int weaponcheckid16, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19, int weaponcheckid20, int weaponcheckid21, int weaponcheckid22, int weaponcheckid23, int weaponcheckid24)
+        static (string, double, int, int, int, int, int, int, int, int, int, int) Weapon(int weaponid, string weaponname, double attackvalue, double damage, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid4, int weaponcheckid5, int weaponcheckid6, int weaponcheckid7, int weaponcheckid8, int weaponcheckid9, int weaponcheckid10)
         {
-            double[] damagee = { damage, attackvalue };
-            damagee[1] += 4;
             if (weaponid == 0)
             {
                 weaponname = "Fist";
@@ -1271,6 +1267,7 @@ internal class Program
                 if (weaponcheckid1 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid1 = 1;
                 }
             }
             else if (weaponid == 2)
@@ -1279,6 +1276,7 @@ internal class Program
                 if (weaponcheckid2 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid2 = 1;
                 }
             }
             else if (weaponid == 3)
@@ -1287,30 +1285,34 @@ internal class Program
                 if (weaponcheckid3 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid3 = 1;
                 }
             }
             else if (weaponid == 4)
             {
-                weaponname = "Fire Sword";
+                weaponname = "Wooden Spear";
                 if (weaponcheckid4 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid4 = 1;
                 }
             }
             else if (weaponid == 5)
             {
-                weaponname = "Fire Blade";
+                weaponname = "Iron Spear";
                 if (weaponcheckid5 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid5 = 1;
                 }
             }
             else if (weaponid == 6)
             {
-                weaponname = "Lava Blade";
+                weaponname = "Steel Spear";
                 if (weaponcheckid6 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid6 = 1;
                 }
             }
             else if (weaponid == 7)
@@ -1319,14 +1321,16 @@ internal class Program
                 if (weaponcheckid7 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid7 = 1;
                 }
             }
             else if (weaponid == 8)
             {
-                weaponname = "Prometheus";
+                weaponname = "Bow";
                 if (weaponcheckid8 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid8 = 1;
                 }
             }
             else if (weaponid == 9)
@@ -1335,6 +1339,7 @@ internal class Program
                 if (weaponcheckid9 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid9 = 1;
                 }
             }
             else if (weaponid == 10)
@@ -1343,121 +1348,10 @@ internal class Program
                 if (weaponcheckid10 > 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid10 = 1;
                 }
             }
-            else if (weaponid == 11)
-            {
-                weaponname = "Bow";
-                if (weaponcheckid11 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 12)
-            {
-                weaponname = "Crossbow";
-                if (weaponcheckid12 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 13)
-            {
-                weaponname = "Pickle Launcher";
-                if (weaponcheckid13 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 14)
-            {
-                weaponname = "Fat Man";
-                if (weaponcheckid14 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 15)
-            {
-                weaponname = "Scar-L";
-                if (weaponcheckid15 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 16)
-            {
-                weaponname = "Ragnarok";
-                if (weaponcheckid16 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 17)
-            {
-                weaponname = "Wooden Spear";
-                if (weaponcheckid17 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 18)
-            {
-                weaponname = "Iron Spear";
-                if (weaponcheckid18 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 19)
-            {
-                weaponname = "Steel Spear";
-                if (weaponcheckid19 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 20)
-            {
-                weaponname = "Ice Spear";
-                if (weaponcheckid20 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 21)
-            {
-                weaponname = "Ice Cube";
-                if (weaponcheckid21 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 22)
-            {
-                weaponname = "Glacier";
-                if (weaponcheckid22 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 23)
-            {
-                weaponname = "Niflheim";
-                if (weaponcheckid23 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            else if (weaponid == 24)
-            {
-                weaponname = "Wand of Ullr";
-                if (weaponcheckid24 > 1)
-                {
-                    attackvalue = damage * 1.25;
-                }
-            }
-            return (weaponname, attackvalue);
+            return (weaponname, attackvalue, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10);
         }
     }
 }
