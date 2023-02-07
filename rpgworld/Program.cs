@@ -311,6 +311,10 @@ internal class Program
             Console.Clear();
             while (mainmenu == true)
             {
+                if (health <= 0)
+                {
+                    health = 5;
+                }
                 Console.Clear();
                 Console.WriteLine("1. Intro");
                 Console.WriteLine("2. Stats");
@@ -456,25 +460,26 @@ internal class Program
                                 enemyattackincome = enemyattack.Next(attackmin, attackmax);
                                 Console.WriteLine("The " + enemynew + " has " + enemyhp + " hp!");
                                 Thread.Sleep(1000);
-                                if (enemyhp <= 0)
-                                {
-                                    combat = false;
-                                    fighting = false;
-                                    win += 1;
-                                }
-                                while (fighting == true)
+                                if (health >= 0)
                                 {
                                     Console.WriteLine("The " + enemynew + " did " + enemyattackincome + " damage!");
                                     health -= enemyattackincome = enemyattack.Next(attackmin, attackmax);
                                     Console.WriteLine("Your HP is currently at " + health + "!");
-                                    if (health <= 0)
-                                    {
-                                        fighting = false;
-                                        combat = false;
-                                        lose += 1;
-                                        break;
-                                    }
+                                }
+                                if (health <= 0)
+                                {
                                     fighting = false;
+                                    combat = false;
+                                    lose += 1;
+                                }
+                                if (enemyhp <= 0)
+                                {
+                                    if (lose == 0)
+                                    {
+                                        combat = false;
+                                        fighting = false;
+                                        win += 1;
+                                    }
                                 }
                             }
                             if (response == "2")
@@ -490,7 +495,6 @@ internal class Program
                                     combat = false;
                                     lose += 1;
                                     health = 5;
-                                    break;
                                 }
                                 bigattack += 1;
                             }
@@ -498,7 +502,7 @@ internal class Program
                             {
                                 combat = false;
                                 draw += 1;
-                                Console.ReadLine();
+                                break;
                             }
                             if (response == "4")
                             {
@@ -551,6 +555,13 @@ internal class Program
 
                         }
                         while (combat == true);
+                        if (lose != 0)
+                        {
+                            Console.WriteLine("You lost! \n 0 EXP EARNED");
+                            Console.ReadLine();
+                            losewin += 1;
+                            lose = 0;
+                        }
                         if (win != 0)
                         {
                             Console.WriteLine("You won!");
@@ -580,18 +591,7 @@ internal class Program
                                 if (weaponworld1 == 1)
                                 {
                                     weaponnameworld1 = "Wooden Sword";
-                                    if (weaponcurrent < 1)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 1)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 1)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -610,18 +610,7 @@ internal class Program
                                 if (weaponworld1 == 2)
                                 {
                                     weaponnameworld1 = "Slingshot";
-                                    if (weaponcurrent < 1)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 1)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 1)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -640,18 +629,7 @@ internal class Program
                                 if (weaponworld1 == 3)
                                 {
                                     weaponnameworld1 = "Wooden Spear";
-                                    if (weaponcurrent < 1)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 1)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 1)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -670,18 +648,7 @@ internal class Program
                                 if (weaponworld1 == 4)
                                 {
                                     weaponnameworld1 = "Iron Sword";
-                                    if (weaponcurrent < 2)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 2)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 2)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -702,18 +669,7 @@ internal class Program
                                 if (weaponworld1 == 5)
                                 {
                                     weaponnameworld1 = "Steelshot";
-                                    if (weaponcurrent < 2)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 2)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 2)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -732,18 +688,7 @@ internal class Program
                                 if (weaponworld1 == 6)
                                 {
                                     weaponnameworld1 = "Iron Spear";
-                                    if (weaponcurrent < 2)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 2)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 2)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -762,18 +707,7 @@ internal class Program
                                 if (weaponworld1 == 7)
                                 {
                                     weaponnameworld1 = "Steel Sword";
-                                    if (weaponcurrent < 3)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 3)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 3)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -792,18 +726,7 @@ internal class Program
                                 if (weaponworld1 == 8)
                                 {
                                     weaponnameworld1 = "Bow";
-                                    if (weaponcurrent < 3)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 3)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 3)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -822,18 +745,7 @@ internal class Program
                                 if (weaponworld1 == 9)
                                 {
                                     weaponnameworld1 = "Steel Spear";
-                                    if (weaponcurrent < 3)
-                                    {
-                                        Console.WriteLine("This weapon does less damage than what you have!");
-                                    }
-                                    if (weaponcurrent == 3)
-                                    {
-                                        Console.WriteLine("This weapon does the same damage than what you have!");
-                                    }
-                                    if (weaponcurrent > 3)
-                                    {
-                                        Console.WriteLine("This weapon does more damage than what you have!");
-                                    }
+                                    Console.WriteLine("You found the " + weaponnameworld1 + ".");
                                     Console.WriteLine("Are you sure? \n1.Yes\n2.No");
                                     string pickupansweralt = Console.ReadLine();
                                     if (pickupansweralt == "1")
@@ -852,13 +764,11 @@ internal class Program
                                     Console.ReadLine();
                                     Console.Clear();
                                 }
-
-                                if (lose != 0)
+                                if (weaponworld1 == 10)
                                 {
-                                    Console.WriteLine("You lost! \n 0 EXP EARNED");
-                                    Console.ReadLine();
-                                    losewin += 1;
-                                    lose = 0;
+                                    Console.WriteLine("nothing found");
+                                    Console.WriteLine("Press Enter to continue");
+                                    Console.Clear();
                                 }
                                 if (draw != 0)
                                 {
@@ -870,6 +780,7 @@ internal class Program
                                 Console.Clear();
                                 Console.WriteLine("Welcome back");
                                 Console.ReadLine();
+                               
                             }
 
 
@@ -879,6 +790,11 @@ internal class Program
                     }
                     while (losewin == 0);
                     losewin = 0;
+                    win = 0;
+                    draw = 0;
+                    lose = 0;
+                    fighting = true;
+                    combat = true;
                     if (answermenu == "6")
                     {
                         int boss = 0;
@@ -1273,25 +1189,25 @@ internal class Program
             else if (weaponid == 2)
             {
                 weaponname = "Iron Sword";
-                if (weaponcheckid2 > 1)
+                if (weaponcheckid2 < 1)
                 {
-                    attackvalue = damage * 1.25;
+                    attackvalue = damage * 1.25 + damage;
                     weaponcheckid2 = 1;
                 }
             }
             else if (weaponid == 3)
             {
                 weaponname = "Steel Sword";
-                if (weaponcheckid3 > 1)
+                if (weaponcheckid3 < 1)
                 {
-                    attackvalue = damage * 1.25;
+                    attackvalue = damage * 1.25 + damage;
                     weaponcheckid3 = 1;
                 }
             }
             else if (weaponid == 4)
             {
                 weaponname = "Wooden Spear";
-                if (weaponcheckid4 > 1)
+                if (weaponcheckid4 < 1)
                 {
                     attackvalue = damage * 1;
                     weaponcheckid4 = 1;
@@ -1300,7 +1216,7 @@ internal class Program
             else if (weaponid == 5)
             {
                 weaponname = "Iron Spear";
-                if (weaponcheckid5 > 1)
+                if (weaponcheckid5 < 1)
                 {
                     attackvalue = damage * 1.25;
                     weaponcheckid5 = 1;
@@ -1309,7 +1225,7 @@ internal class Program
             else if (weaponid == 6)
             {
                 weaponname = "Steel Spear";
-                if (weaponcheckid6 > 1)
+                if (weaponcheckid6 < 1)
                 {
                     attackvalue = damage * 1.25;
                     weaponcheckid6 = 1;
@@ -1318,7 +1234,7 @@ internal class Program
             else if (weaponid == 7)
             {
                 weaponname = "Volcano";
-                if (weaponcheckid7 > 1)
+                if (weaponcheckid7 < 1)
                 {
                     attackvalue = damage * 1.25;
                     weaponcheckid7 = 1;
@@ -1327,7 +1243,7 @@ internal class Program
             else if (weaponid == 8)
             {
                 weaponname = "Bow";
-                if (weaponcheckid8 > 1)
+                if (weaponcheckid8 < 1)
                 {
                     attackvalue = damage * 1.25;
                     weaponcheckid8 = 1;
@@ -1336,7 +1252,7 @@ internal class Program
             else if (weaponid == 9)
             {
                 weaponname = "Slingshot";
-                if (weaponcheckid9 > 1)
+                if (weaponcheckid9 < 1)
                 {
                     attackvalue = damage * 1;
                     weaponcheckid9 = 1;
@@ -1345,7 +1261,7 @@ internal class Program
             else if (weaponid == 10)
             {
                 weaponname = "Steelshot";
-                if (weaponcheckid10 > 1)
+                if (weaponcheckid10 < 1)
                 {
                     attackvalue = damage * 1.25;
                     weaponcheckid10 = 1;
