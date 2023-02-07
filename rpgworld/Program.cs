@@ -1266,7 +1266,7 @@ internal class Program
                 weaponname = "Wooden Sword";
                 if (weaponcheckid1 > 1)
                 {
-                    attackvalue = damage * 1.25;
+                    attackvalue = damage * 1;
                     weaponcheckid1 = 1;
                 }
             }
@@ -1293,7 +1293,7 @@ internal class Program
                 weaponname = "Wooden Spear";
                 if (weaponcheckid4 > 1)
                 {
-                    attackvalue = damage * 1.25;
+                    attackvalue = damage * 1;
                     weaponcheckid4 = 1;
                 }
             }
@@ -1338,7 +1338,7 @@ internal class Program
                 weaponname = "Slingshot";
                 if (weaponcheckid9 > 1)
                 {
-                    attackvalue = damage * 1.25;
+                    attackvalue = damage * 1;
                     weaponcheckid9 = 1;
                 }
             }
