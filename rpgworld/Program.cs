@@ -57,6 +57,8 @@ internal class Program
         int draw = 0;
         double enemyhp = 0;
         /*combat in world 1 */
+        string weaponnameworld1 = string.Empty;
+        string pickupanswer = string.Empty;
         int weaponworld1min = 1;
         int weaponworld1max = 10;
         int weaponworld1 = rng.Next(weaponworld1min, weaponworld1max);
@@ -576,7 +578,9 @@ internal class Program
                             string weaponnameworld1 = string.Empty;
                             Console.WriteLine($"The enemy dropped a weapon!");
                             Console.WriteLine("Pick up? \n1.Yes\n2.No");
-                            string pickupanswer = Console.ReadLine();
+                            pickupanswer = Console.ReadLine();
+                            weaponworldname(weaponnamedworld1, weaponid, weaponcurrent, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid17, weaponcheckid18, weaponcheckid19)
+                                Console.WriteLine("The enemy dropped the ");
                             if (pickupanswer == "1")
                             {
                                 if (weaponworld1 == 1)
@@ -843,13 +847,13 @@ internal class Program
                                         weaponid = 19;
                                         weaponcurrent = 3;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid19 = 1;
                                     }
                                     if (pickupansweralt == "2")
                                     {
                                         Console.WriteLine("Item ignored.");
                                     }
+
                                     Console.WriteLine("Press Enter to continue");
                                     Console.ReadLine();
                                     Console.Clear();
@@ -869,6 +873,7 @@ internal class Program
                                     Console.WriteLine("You ran away! \n0 EXP EARNED");
                                     Console.ReadLine();
                                 }
+                                (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                 Console.Clear();
                                 Console.WriteLine("Welcome back");
                                 Console.ReadLine();
@@ -1045,7 +1050,7 @@ internal class Program
                             if (answersonic == "y")
                             {
                                 weaponid = 15;
-                                (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                (weaponName, attackvalue, weaponid) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                 weaponcheckid16 = 1;
                             }
                             if (answersonic == "n")
@@ -1257,10 +1262,8 @@ internal class Program
             }
             return enemyname;
         }
-        static (string, double) Weapon(int weaponid, string weaponname, double attackvalue, double damage, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid4, int weaponcheckid5, int weaponcheckid6, int weaponcheckid7, int weaponcheckid8, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid12, int weaponcheckid13, int weaponcheckid14, int weaponcheckid15, int weaponcheckid16, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19, int weaponcheckid20, int weaponcheckid21, int weaponcheckid22, int weaponcheckid23, int weaponcheckid24)
+        static (string, double, int) Weapon(int weaponid, string weaponname, double attackvalue, double damage, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid4, int weaponcheckid5, int weaponcheckid6, int weaponcheckid7, int weaponcheckid8, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid12, int weaponcheckid13, int weaponcheckid14, int weaponcheckid15, int weaponcheckid16, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19, int weaponcheckid20, int weaponcheckid21, int weaponcheckid22, int weaponcheckid23, int weaponcheckid24)
         {
-            double[] damagee = { damage, attackvalue };
-            damagee[1] += 4;
             if (weaponid == 0)
             {
                 weaponname = "Fist";
@@ -1268,196 +1271,224 @@ internal class Program
             else if (weaponid == 1)
             {
                 weaponname = "Wooden Sword";
-                if (weaponcheckid1 > 1)
+                if (weaponcheckid1 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid1 = 1;
                 }
             }
             else if (weaponid == 2)
             {
                 weaponname = "Iron Sword";
-                if (weaponcheckid2 > 1)
+                if (weaponcheckid2 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid2 = 1;
                 }
             }
             else if (weaponid == 3)
             {
                 weaponname = "Steel Sword";
-                if (weaponcheckid3 > 1)
+                if (weaponcheckid3 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid3 = 1;
                 }
             }
             else if (weaponid == 4)
             {
                 weaponname = "Fire Sword";
-                if (weaponcheckid4 > 1)
+                if (weaponcheckid4 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid4 = 1;
                 }
             }
             else if (weaponid == 5)
             {
                 weaponname = "Fire Blade";
-                if (weaponcheckid5 > 1)
+                if (weaponcheckid5 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid5 = 1;
                 }
             }
             else if (weaponid == 6)
             {
                 weaponname = "Lava Blade";
-                if (weaponcheckid6 > 1)
+                if (weaponcheckid6 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid6 = 1;
                 }
             }
             else if (weaponid == 7)
             {
                 weaponname = "Volcano";
-                if (weaponcheckid7 > 1)
+                if (weaponcheckid7 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid7 = 1;
                 }
             }
             else if (weaponid == 8)
             {
                 weaponname = "Prometheus";
-                if (weaponcheckid8 > 1)
+                if (weaponcheckid8 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid8 = 1;
                 }
             }
             else if (weaponid == 9)
             {
                 weaponname = "Slingshot";
-                if (weaponcheckid9 > 1)
+                if (weaponcheckid9 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid9 = 1;
                 }
             }
             else if (weaponid == 10)
             {
                 weaponname = "Steelshot";
-                if (weaponcheckid10 > 1)
+                if (weaponcheckid10 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid10 = 1;
                 }
             }
             else if (weaponid == 11)
             {
                 weaponname = "Bow";
-                if (weaponcheckid11 > 1)
+                if (weaponcheckid11 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid11 = 1;
                 }
             }
             else if (weaponid == 12)
             {
                 weaponname = "Crossbow";
-                if (weaponcheckid12 > 1)
+                if (weaponcheckid12 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid12 = 1;
                 }
             }
             else if (weaponid == 13)
             {
                 weaponname = "Pickle Launcher";
-                if (weaponcheckid13 > 1)
+                if (weaponcheckid13 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid13 = 1;
                 }
             }
             else if (weaponid == 14)
             {
                 weaponname = "Fat Man";
-                if (weaponcheckid14 > 1)
+                if (weaponcheckid14 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid14 = 1;
                 }
             }
             else if (weaponid == 15)
             {
                 weaponname = "Scar-L";
-                if (weaponcheckid15 > 1)
+                if (weaponcheckid15 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid15 = 1;
                 }
             }
             else if (weaponid == 16)
             {
                 weaponname = "Ragnarok";
-                if (weaponcheckid16 > 1)
+                if (weaponcheckid16 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid16 = 1;
                 }
             }
             else if (weaponid == 17)
             {
                 weaponname = "Wooden Spear";
-                if (weaponcheckid17 > 1)
+                if (weaponcheckid17 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid17 = 1;
                 }
             }
             else if (weaponid == 18)
             {
                 weaponname = "Iron Spear";
-                if (weaponcheckid18 > 1)
+                if (weaponcheckid18 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid18 = 1;
                 }
             }
             else if (weaponid == 19)
             {
                 weaponname = "Steel Spear";
-                if (weaponcheckid19 > 1)
+                if (weaponcheckid19 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid19 = 1;
                 }
             }
             else if (weaponid == 20)
             {
                 weaponname = "Ice Spear";
-                if (weaponcheckid20 > 1)
+                if (weaponcheckid20 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid20 = 1;
                 }
             }
             else if (weaponid == 21)
             {
                 weaponname = "Ice Cube";
-                if (weaponcheckid21 > 1)
+                if (weaponcheckid21 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid21 = 1;
                 }
             }
             else if (weaponid == 22)
             {
                 weaponname = "Glacier";
-                if (weaponcheckid22 > 1)
+                if (weaponcheckid22 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid22 = 1;
                 }
             }
             else if (weaponid == 23)
             {
                 weaponname = "Niflheim";
-                if (weaponcheckid23 > 1)
+                if (weaponcheckid23 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid23 = 1;
                 }
             }
             else if (weaponid == 24)
             {
                 weaponname = "Wand of Ullr";
-                if (weaponcheckid24 > 1)
+                if (weaponcheckid24 < 1)
                 {
                     attackvalue = damage * 1.25;
+                    weaponcheckid24 = 1;
                 }
             }
-            return (weaponname, attackvalue);
+            return (weaponname, attackvalue, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+        }
+        static string weaponworldname(string weaponnamedworld1, int weaponid, int weaponcurrent, string pickupansweralt, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19)
+        {
+
         }
     }
 }
