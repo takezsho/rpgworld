@@ -39,7 +39,6 @@ internal class Program
         int critmax = 151;
         int critical = rnd.Next(critmin, critmax);
         int Enemyid = rnd.Next(enemymin, enemymax);
-        string enemynew = Attack(Enemyid, enemyname);
         int level = 0;
         int exptotal = 0;
         bool fighting = true;
@@ -55,6 +54,7 @@ internal class Program
         int win = 0;
         int lose = 0;
         int draw = 0;
+        int weaponid = 0;
         double enemyhp = 0;
         /*combat in world 1 */
         string weaponnameworld1 = string.Empty;
@@ -62,7 +62,6 @@ internal class Program
         int weaponworld1min = 1;
         int weaponworld1max = 10;
         int weaponworld1 = rng.Next(weaponworld1min, weaponworld1max);
-        int weaponid = 0;
         int weaponcurrent = 0;
         string weaponname = "";
         double health = rng.Next(hpmin, hpmax);
@@ -70,7 +69,32 @@ internal class Program
         double Luck = rng.Next(luckmin, luckmax);
         //var (weaponName, damageValue) = Weapon(weaponid, weaponname, damage);
         /*  weapon check id 
+         *  i dont know what happened to the code it turned into spaghetti
          */
+        int weaponid1 = 0;
+        int weaponid2 = 0;
+        int weaponid3 = 0;
+        int weaponid4 = 0;
+        int weaponid5 = 0;
+        int weaponid6 = 0;
+        int weaponid7 = 0;
+        int weaponid8 = 0;
+        int weaponid9 = 0;
+        int weaponid10 = 0;
+        int weaponid11 = 0;
+        int weaponid12 = 0;
+        int weaponid13 = 0;
+        int weaponid14 = 0;
+        int weaponid15 = 0;
+        int weaponid16 = 0;
+        int weaponid17 = 0;
+        int weaponid18 = 0;
+        int weaponid19 = 0;
+        int weaponid20 = 0;
+        int weaponid21 = 0;
+        int weaponid22 = 0;
+        int weaponid23 = 0;
+        int weaponid24 = 0;
         int weaponcheckid1 = 0;
         int weaponcheckid2 = 0;
         int weaponcheckid3 = 0;
@@ -163,15 +187,14 @@ internal class Program
                         start = true;
                         answerweapon = "Sword";
                         weaponid = 1;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
-                    }
+                        (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                     if (answerweapon == "2")
                     {
                         slingshot += 1;
                         start = true;
                         answerweapon = "Slingshot";
                         weaponid = 9;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                     }
                     if (answerweapon == "3")
                     {
@@ -179,7 +202,7 @@ internal class Program
                         start = true;
                         answerweapon = "Spear";
                         weaponid = 17;
-                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                     }
                     while (start == true)
                     {
@@ -287,7 +310,7 @@ internal class Program
                                 {
                                     tutorial = 1;
                                     Console.Clear();
-                                    (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                        (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                 }
                             }
 
@@ -313,6 +336,7 @@ internal class Program
             Console.ReadLine();
             Console.WriteLine("ADOAWDIAWDAWDAWDVGFADADYIWDAWDAWDADWDDAWD");
             Console.Clear();
+                string enemynew = Attack(Enemyid, enemyname);
             while (mainmenu == true)
             {
                 Console.Clear();
@@ -575,11 +599,9 @@ internal class Program
                             Console.ReadLine();
                             Console.Clear();
                             weaponworld1 = rng.Next(weaponworld1min, weaponworld1max);
-                            string weaponnameworld1 = string.Empty;
                             Console.WriteLine($"The enemy dropped a weapon!");
                             Console.WriteLine("Pick up? \n1.Yes\n2.No");
                             pickupanswer = Console.ReadLine();
-                            weaponworldname(weaponnamedworld1, weaponid, weaponcurrent, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid17, weaponcheckid18, weaponcheckid19)
                                 Console.WriteLine("The enemy dropped the ");
                             if (pickupanswer == "1")
                             {
@@ -605,7 +627,7 @@ internal class Program
                                         weaponid = 1;
                                         weaponcurrent = 1;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid1 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -635,7 +657,7 @@ internal class Program
                                         weaponid = 9;
                                         weaponcurrent = 1;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid9 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -665,7 +687,7 @@ internal class Program
                                         weaponid = 17;
                                         weaponcurrent = 1;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid17 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -696,7 +718,7 @@ internal class Program
                                         weaponcurrent = 2;
                                         Console.WriteLine("Item selected.");
 
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid2 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -727,7 +749,7 @@ internal class Program
                                         weaponid = 10;
                                         weaponcurrent = 2;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid10 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -757,7 +779,7 @@ internal class Program
                                         weaponid = 18;
                                         weaponcurrent = 2;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid18 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -787,7 +809,7 @@ internal class Program
                                         weaponid = 3;
                                         weaponcurrent = 3;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid3 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -817,7 +839,7 @@ internal class Program
                                         weaponid = 11;
                                         weaponcurrent = 3;
                                         Console.WriteLine("Item selected.");
-                                        (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                            (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                         weaponcheckid11 = 1;
                                     }
                                     if (pickupansweralt == "2")
@@ -873,7 +895,7 @@ internal class Program
                                     Console.WriteLine("You ran away! \n0 EXP EARNED");
                                     Console.ReadLine();
                                 }
-                                (weaponName, attackvalue) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                    (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                 Console.Clear();
                                 Console.WriteLine("Welcome back");
                                 Console.ReadLine();
@@ -1050,7 +1072,7 @@ internal class Program
                             if (answersonic == "y")
                             {
                                 weaponid = 15;
-                                (weaponName, attackvalue, weaponid) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
+                                    (weaponName, attackvalue, weaponid1, weaponid2, weaponid3, weaponid4, weaponid5, weaponid6, weaponid7, weaponid8, weaponid9, weaponid10, weaponid11, weaponid12, weaponid13, weaponid14, weaponid15, weaponid16, weaponid17, weaponid18, weaponid19, weaponid20, weaponid21, weaponid22, weaponid23, weaponid24) = Weapon(weaponid, weaponname, attackvalue, damage, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
                                 weaponcheckid16 = 1;
                             }
                             if (answersonic == "n")
@@ -1262,7 +1284,7 @@ internal class Program
             }
             return enemyname;
         }
-        static (string, double, int) Weapon(int weaponid, string weaponname, double attackvalue, double damage, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid4, int weaponcheckid5, int weaponcheckid6, int weaponcheckid7, int weaponcheckid8, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid12, int weaponcheckid13, int weaponcheckid14, int weaponcheckid15, int weaponcheckid16, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19, int weaponcheckid20, int weaponcheckid21, int weaponcheckid22, int weaponcheckid23, int weaponcheckid24)
+            static (string, double, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int) Weapon(int weaponid, string weaponname, double attackvalue, double damage, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid4, int weaponcheckid5, int weaponcheckid6, int weaponcheckid7, int weaponcheckid8, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid12, int weaponcheckid13, int weaponcheckid14, int weaponcheckid15, int weaponcheckid16, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19, int weaponcheckid20, int weaponcheckid21, int weaponcheckid22, int weaponcheckid23, int weaponcheckid24)
         {
             if (weaponid == 0)
             {
@@ -1486,8 +1508,6 @@ internal class Program
             }
             return (weaponname, attackvalue, weaponcheckid1, weaponcheckid2, weaponcheckid3, weaponcheckid4, weaponcheckid5, weaponcheckid6, weaponcheckid7, weaponcheckid8, weaponcheckid9, weaponcheckid10, weaponcheckid11, weaponcheckid12, weaponcheckid13, weaponcheckid14, weaponcheckid15, weaponcheckid16, weaponcheckid17, weaponcheckid18, weaponcheckid19, weaponcheckid20, weaponcheckid21, weaponcheckid22, weaponcheckid23, weaponcheckid24);
         }
-        static string weaponworldname(string weaponnamedworld1, int weaponid, int weaponcurrent, string pickupansweralt, int weaponcheckid1, int weaponcheckid2, int weaponcheckid3, int weaponcheckid9, int weaponcheckid10, int weaponcheckid11, int weaponcheckid17, int weaponcheckid18, int weaponcheckid19)
-        {
 
         }
     }
